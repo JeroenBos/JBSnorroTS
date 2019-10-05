@@ -45,13 +45,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JeroenBos/JBSnorroCore.git"
+    "url": "git+https://github.com/JeroenBos/JBSnorro.git"
   },
   "keywords": [
     "jbsnorro"
   ],
   "bugs": {
-    "url": "https://github.com/JeroenBos/JBSnorroCore/issues"
+    "url": "https://github.com/JeroenBos/JBSnorro/issues"
   },
-  "homepage": "https://github.com/JeroenBos/JBSnorroCore#readme"
+  "homepage": "https://github.com/JeroenBos/JBSnorro#readme"
 }
