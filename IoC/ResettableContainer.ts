@@ -17,18 +17,18 @@ export class ResettableContainer<TLookup, TKey extends string & keyof TLookup = 
     private getProviderKey(serviceIdentifier: TKey): TKey {
         return serviceIdentifier + 'Provider' as TKey;
     }
-    bindResettableProvider<K extends TKey, T extends TLookup[TKey]>(serviceIdentifier: K, provider: IResettableProvider<T>): void {
+    bindResettableProvider<K extends TKey>(serviceIdentifier: K, provider: IResettableProvider<TLookup[TKey]>): void {
         if (provider === undefined)
             throw new Error(`argument 'provider' is undefined`);
 
         const providerIdentifier = this.getProviderKey(serviceIdentifier);
-        this.rebind<IResettableProvider<T>>(providerIdentifier).toConstantValue(provider);
-        this.rebind<T>(serviceIdentifier).toDynamicValue(() => this.getProvider<TKey, T>(serviceIdentifier).provide());
+        this.rebind<IResettableProvider<TLookup[TKey]>>(providerIdentifier).toConstantValue(provider);
+        this.rebind<TLookup[TKey]>(serviceIdentifier).toDynamicValue(() => this.getProvider<TKey>(serviceIdentifier).provide());
         this.resettableIndenfiers.add(serviceIdentifier);
     }
 
-    getProvider<K extends string & keyof TLookup, T extends TLookup[K] = TLookup[K]>(serviceIdentifier: K): IResettableProvider<T> {
-        return super.get<IResettableProvider<T>>(serviceIdentifier + 'Provider');
+    getProvider<K extends TKey>(serviceIdentifier: K): IResettableProvider<TLookup[K]> {
+        return super.get<IResettableProvider<TLookup[K]>>(this.getProviderKey(serviceIdentifier));
     }
     /**
      * Creates a new singleton for the service identified by `serviceIdentifier`.
