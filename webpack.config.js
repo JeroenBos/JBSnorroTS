@@ -1,7 +1,6 @@
-const nodeEnv = process.env.NODE_ENV || 'development';
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-var sharedConfig = {
+const sharedConfig = {
     mode: 'development',
     devtool: 'source-map',
     module: {
@@ -38,7 +37,7 @@ var sharedConfig = {
     }
 };
 
-var mainConfig = {
+const mainConfig = {
     ...sharedConfig,
     name: 'main',
     entry: './index.ts',
@@ -49,7 +48,7 @@ var mainConfig = {
         globalObject: 'typeof self !== \'undefined\' ? self : this', // webpack bug workaround, see https://github.com/webpack/webpack/issues/6784
     },
 };
-var testConfig = {
+const testConfig = {
     ...sharedConfig,
     name: 'test',
     entry: './tests/index.spec.ts',
