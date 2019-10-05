@@ -1,1 +1,1 @@
-debugger;
+import './ResettableContainer.spec';
