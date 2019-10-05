@@ -4,14 +4,10 @@
 
 // JS:
 
-// import {
-//     assert,
-// } from './typeHelper';
-
-export {
-    // assert,
-};
+import {
+    assert, assertAreIdentical
+} from './contracts';
 
 export default {
-    // assert
+    assert, assertAreIdentical
 };
