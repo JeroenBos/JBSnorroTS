@@ -1,8 +1,10 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 const sharedConfig = {
     mode: 'development',
     devtool: 'source-map',
+    externals: [nodeExternals()],
     module: {
         rules: [
             {
