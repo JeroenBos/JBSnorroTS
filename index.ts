@@ -8,6 +8,10 @@ import {
     assert, assertAreIdentical
 } from './contracts';
 
+import {
+    undefinedToFalse
+} from './conversions';
+
 export default {
-    assert, assertAreIdentical
+    assert, assertAreIdentical, undefinedToFalse
 };
