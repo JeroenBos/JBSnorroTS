@@ -28,7 +28,7 @@ export class ResettableContainer<TLookup, TKey extends string & keyof TLookup = 
     }
 
     getProvider<K extends string & keyof TLookup, T extends TLookup[K] = TLookup[K]>(serviceIdentifier: K): IResettableProvider<T> {
-        return this.get<IResettableProvider<T>>(serviceIdentifier + 'Provider');
+        return super.get<IResettableProvider<T>>(serviceIdentifier + 'Provider');
     }
     /**
      * Creates a new singleton for the service identified by `serviceIdentifier`.
@@ -77,5 +77,13 @@ export class ResettableContainer<TLookup, TKey extends string & keyof TLookup = 
             const provider = this.getProvider(key);
             provider.reset();
         });
+    }
+
+    /**
+     * Gets the service associated to the specified key.
+     */
+    // @ts-ignore. Override generic type parameter is different from base method
+    get<K extends TKey>(serviceIdentifier: K): TLookup[K] {
+        return super.get(serviceIdentifier);
     }
 }
