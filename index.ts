@@ -16,8 +16,11 @@ import {
 import {
     undefinedToFalse
 } from './conversions';
+import { isDevelopment } from './flags';
 
-
-export default {
-    assert, assertAreIdentical, undefinedToFalse
+export {
+    assert,
+    assertAreIdentical,
+    undefinedToFalse,
+    isDevelopment,
 };
