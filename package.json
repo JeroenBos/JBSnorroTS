@@ -1,7 +1,7 @@
 {
   "name": "jbsnorro",
   "version": "0.0.1",
-  "description": "A small library containing core functionality.",
+  "description": "A library containing core functionality that I like working with.",
   "main": "dist/jbsnorro.js",
   "types": "dist/jbsnorro.d.ts",
   "scripts": {
