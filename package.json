@@ -1,6 +1,6 @@
 {
   "name": "jbsnorro",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A library containing core functionality that I like working with.",
   "main": "dist/jbsnorro.js",
   "types": "dist/jbsnorro.d.ts",

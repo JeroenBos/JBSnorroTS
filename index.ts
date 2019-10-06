@@ -6,6 +6,9 @@ export { AbstractProvider } from './IoC/AbstractProvider';
 export { InverseLookup } from './@types/TLookup';
 export { ResettableContainer } from './IoC/ResettableContainer';
 export type Rect = ClientRect | DOMRect;
+export { Grouping } from './extensions/enumerable';
+export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+export type UncheckedOmit<T, K> = Pick<T, Exclude<keyof T, K>>;
 
 // JS:
 
@@ -17,10 +20,14 @@ import {
     undefinedToFalse
 } from './conversions';
 import { isDevelopment } from './flags';
+import { groupBy } from './extensions/enumerable';
+import { isEmptyObject } from './extensions/object';
 
 export {
     assert,
     assertAreIdentical,
     undefinedToFalse,
     isDevelopment,
+    groupBy,
+    isEmptyObject,
 };
