@@ -5,7 +5,7 @@ export { IResettableProvider } from './IoC/IResettableProvider';
 export { AbstractProvider } from './IoC/AbstractProvider';
 export { InverseLookup } from './@types/TLookup';
 export { ResettableContainer } from './IoC/ResettableContainer';
-
+export type Rect = ClientRect | DOMRect;
 
 // JS:
 
