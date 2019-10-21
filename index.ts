@@ -22,6 +22,7 @@ import {
 import { isDevelopment } from './flags';
 import { groupBy } from './extensions/enumerable';
 import { isEmptyObject } from './extensions/object';
+import { isNumeric } from './extensions/numerics';
 
 export {
     assert,
@@ -30,4 +31,5 @@ export {
     isDevelopment,
     groupBy,
     isEmptyObject,
+    isNumeric,
 };
