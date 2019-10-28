@@ -4,8 +4,10 @@
  * @param message The error message in case of falsehood.
  */
 export function assert(expr: boolean, message = "Assertion failed") {
-    if (typeof expr != 'boolean')
+    if (typeof expr != 'boolean') {
+        debugger;
         throw new Error('The specified expression cannot be asserted as it is not boolean');
+    }
 
     if (!expr) {
         debugger;
