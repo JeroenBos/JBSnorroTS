@@ -4,8 +4,10 @@
  * @param message The error message in case of falsehood.
  */
 export function assert(expr: boolean, message = "Assertion failed") {
-    if (typeof expr != 'boolean')
+    if (typeof expr != 'boolean') {
+        debugger;
         throw new Error('The specified expression cannot be asserted as it is not boolean');
+    }
 
     if (!expr) {
         debugger;
@@ -23,4 +25,14 @@ export function assertAreIdentical<T>(sequence: Iterable<T>, message = "Assertio
         else if (element != e)
             throw new Error(message);
     }
+}
+
+/** Fails with the specified message. */
+export function fail(message = "Assertion failed"): void {
+    assert(false, message);
+}
+
+/** Fails with the specified message. */
+export function unreachable(message = "unreachable"): void {
+    assert(false, message);
 }
