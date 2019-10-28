@@ -29,3 +29,8 @@ export function assertAreIdentical<T>(sequence: Iterable<T>, message = "Assertio
 export function fail(message = "Assertion failed"): void {
     assert(false, message);
 }
+
+/** Fails with the specified message. */
+export function unreachable(message = "unreachable"): void {
+    assert(false, message);
+}

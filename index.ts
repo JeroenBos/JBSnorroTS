@@ -13,7 +13,7 @@ export type UncheckedOmit<T, K> = Pick<T, Exclude<keyof T, K>>;
 // JS:
 
 import {
-    assert, assertAreIdentical, fail
+    assert, assertAreIdentical, fail, unreachable,
 } from './contracts';
 
 import {
@@ -32,5 +32,6 @@ export {
     groupBy,
     isEmptyObject,
     isNumeric,
-    fail
+    fail,
+    unreachable,
 };
