@@ -1,9 +1,9 @@
 {
   "name": "jbsnorro",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A library containing core functionality that I like working with.",
   "main": "dist/jbsnorro.js",
-  "types": "dist/jbsnorro.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
     "prepublishOnly": "npm install && webpack && mocha dist/test.js",
     "build": "webpack",
