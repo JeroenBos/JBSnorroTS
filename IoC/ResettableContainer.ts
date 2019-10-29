@@ -61,6 +61,7 @@ export class ResettableContainer<TLookup, TKey extends string & keyof TLookup = 
     }
 
     unbindAll() {
+        this.resetAll();
         this.resettableIndentifiers.clear();
         super.unbindAll();
     }
