@@ -6,7 +6,7 @@ import { assert } from '../contracts';
  * Extends `Container` with an easy way to use IoC for both a service and the provider of that service.
  */
 export class ResettableContainer<TLookup, TKey extends string & keyof TLookup = string & keyof TLookup> extends Container {
-    private readonly resettableIndenfiers = new Set<TKey>();
+    private readonly resettableIndentifiers = new Set<TKey>();
     public constructor(
         public readonly identifiers: Readonly<{ [key in TKey]: key }>,
         containerOptions?: interfaces.ContainerOptions
@@ -24,7 +24,7 @@ export class ResettableContainer<TLookup, TKey extends string & keyof TLookup = 
         const providerIdentifier = this.getProviderKey(serviceIdentifier);
         this.rebind<IResettableProvider<TLookup[TKey]>>(providerIdentifier).toConstantValue(provider);
         this.rebind<TLookup[TKey]>(serviceIdentifier).toDynamicValue(() => this.getProvider<TKey>(serviceIdentifier).provide());
-        this.resettableIndenfiers.add(serviceIdentifier);
+        this.resettableIndentifiers.add(serviceIdentifier);
     }
 
     getProvider<K extends TKey>(serviceIdentifier: K): IResettableProvider<TLookup[K]> {
@@ -73,7 +73,7 @@ export class ResettableContainer<TLookup, TKey extends string & keyof TLookup = 
      * Resets all resettable services.
      */
     resetAll(): void {
-        this.resettableIndenfiers.forEach(key => {
+        this.resettableIndentifiers.forEach(key => {
             const provider = this.getProvider(key);
             provider.reset();
         });
