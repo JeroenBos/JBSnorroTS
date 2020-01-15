@@ -44,7 +44,7 @@ const mainConfig = {
     name: 'main',
     entry: './index.ts',
     output: {
-        filename: './jbsnorro.js',
+        filename: './project_name.js',
         library: 'default',
         libraryTarget: 'umd',
         globalObject: 'typeof self !== \'undefined\' ? self : this', // webpack bug workaround, see https://github.com/webpack/webpack/issues/6784

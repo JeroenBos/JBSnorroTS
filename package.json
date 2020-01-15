@@ -1,8 +1,8 @@
 {
-  "name": "jbsnorro",
-  "version": "0.0.7",
-  "description": "A library containing core functionality that I like working with.",
-  "main": "dist/jbsnorro.js",
+  "name": "project_name",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/project_name.js",
   "types": "dist/types/index.d.ts",
   "scripts": {
     "prepublishOnly": "npm install && webpack && mocha dist/test.js",
@@ -12,10 +12,7 @@
     "test": "mocha dist/test.js",
     "rebuild": "npm install && webpack"
   },
-  "author": "Jeroen Bos",
-  "license": "ISC",
   "dependencies": {
-    "inversify": "5.0.1"
   },
   "devDependencies": {
     "@types/chai": "3.4.34",
@@ -39,19 +36,5 @@
     "webpack-config-utils": "2.3.0",
     "webpack-dev-server": "3.2.1",
     "webpack-node-externals": "1.7.2"
-  },
-  "directories": {
-    "test": "tests"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JeroenBos/JBSnorro.git"
-  },
-  "keywords": [
-    "jbsnorro"
-  ],
-  "bugs": {
-    "url": "https://github.com/JeroenBos/JBSnorro/issues"
-  },
-  "homepage": "https://github.com/JeroenBos/JBSnorro#readme"
+  }
 }
