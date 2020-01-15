@@ -1,37 +1,19 @@
-// TS:
+// This file in the entry point for the main webpack configuration
+// Everything exported here can be used from other JS libraries
 
-export { IProvider } from './IoC/IProvider';
-export { IResettableProvider } from './IoC/IResettableProvider';
-export { AbstractProvider } from './IoC/AbstractProvider';
-export { InverseLookup } from './@types/TLookup';
-export { ResettableContainer } from './IoC/ResettableContainer';
-export type Rect = ClientRect | DOMRect;
-export { Grouping } from './extensions/enumerable';
-export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
-export type UncheckedOmit<T, K> = Pick<T, Exclude<keyof T, K>>;
+// TS export examples:
 
-// JS:
+// export { IProvider } from './IoC/IProvider';
+// export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+
+// JS export examples:
 
 import {
-    assert, assertAreIdentical, fail, unreachable,
+    assert, fail, unreachable,
 } from './contracts';
-
-import {
-    undefinedToFalse
-} from './conversions';
-import { isDevelopment } from './flags';
-import { groupBy } from './extensions/enumerable';
-import { isEmptyObject } from './extensions/object';
-import { isNumeric } from './extensions/numerics';
 
 export {
     assert,
-    assertAreIdentical,
-    undefinedToFalse,
-    isDevelopment,
-    groupBy,
-    isEmptyObject,
-    isNumeric,
     fail,
     unreachable,
 };
